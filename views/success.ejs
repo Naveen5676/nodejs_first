@@ -1,3 +1,4 @@
+<%- include('includes/head.ejs') %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +18,8 @@
     </style>
 </head>
 <body>
-    <header class="main-header">
+    <%- include('includes/navigation.ejs') %>
+    <!-- <header class="main-header">
         <nav class="main-header-nav">
             <ul class="main-header-item-list">
                 <li class="main-header-items"><a  href="/">shop</a></li>
@@ -25,12 +27,12 @@
                 <li class="main-header-items"><a href="/contactus">Contact  Us</a></li>
             </ul>   
         </nav>
-    </header>
+    </header> -->
     <main>
         <div>
             <h1>Form successfuly filled</h1>
         </div>
     </main>
-    
+    <%- include('includes/end.ejs') %>   
 </body>
 </html>

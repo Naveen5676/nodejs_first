@@ -1,3 +1,4 @@
+<%- include('includes/head.ejs') %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -48,7 +49,8 @@
   </style>
   </head>
   <body>
-    <header class="main-header">
+    <%- include('includes/navigation.ejs') %>
+    <!-- <header class="main-header">
       <nav class="main-header-nav">
         <ul class="main-header-item-list">
           <li class="main-header-items"><a href="/">shop</a></li>
@@ -60,7 +62,7 @@
           </li>
         </ul>
       </nav>
-    </header>
+    </header> -->
     <main>
       <form class="contact-form" action="/contactus" method="post">
         <div  class="form-control"> 
@@ -76,5 +78,6 @@
         </div>
       </form>
     </main>
+    <%- include('includes/end.ejs') %>
   </body>
 </html>

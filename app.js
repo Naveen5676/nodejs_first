@@ -1,28 +1,26 @@
-const http = require("http");
-const path = require('path')
+const path = require('path');
 
-const express = require("express");
-const bodyParser = require("body-parser");
+const express = require('express');
+const bodyParser = require('body-parser');
+
+const errorController = require('./controllers/error')
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, "public")));
+app.set('view engine', 'ejs');
+app.set('views', 'views');
 
-const adminRoutes = require('./routes/admin') ; 
-const  shopRoutes=require('./routes/shop');
-const contactusRoutes = require('./routes/contactus');
+const adminRoutes = require('./routes/admin');
+const shopRoutes = require('./routes/shop');
+const contactRoutes = require('./routes/contactus')
 
-app.use(bodyParser.urlencoded({ extended: false })); //parser
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/admin',adminRoutes);
+app.use('/admin', adminRoutes);
 app.use(shopRoutes);
-app.use(contactusRoutes);
+app.use(contactRoutes);
 
+app.use(errorController.get404);
 
-app.use('/',(req,res,next)=>{
-    res.status(404).sendFile(path.join(__dirname , 'views', '404.html'))
-});
-
-// const server = http.createServer(app)
-// server.listen(3000)
-app.listen(3000); // this is shorthand for above statement
+app.listen(3000);
