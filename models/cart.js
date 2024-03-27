@@ -39,4 +39,14 @@ module.exports = class Cart{
         
         //add a new product increase quantity 
     }
+
+    // static deleteProduct(id , productPrice){
+    //     fs.readFile(p , (err, fileContent)=>{
+    //         if(err){
+    //             return ;
+    //         }
+    //         const updatedCart = {...cart}
+    //     })
+    // }
 }
+
